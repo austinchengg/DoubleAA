@@ -8,5 +8,6 @@ interface.innerHTML = "Set Water Reminder"
 function waterData() {
     let data = document.getElementById("water").value
     console.log(data)
-
 }
+
+waterData()
