@@ -17,29 +17,133 @@
     //maybe all in 1 function
 
     // GUIDE: This initiates the Timed Water-Popup
-function water(times, delay) {
+let waterStop = false
+
+function waterStopper () {
+    waterStop = true
+}
+function water(delay) {
     const url = "https://naluwellness.com/images/easyblog_articles/10/b2ap3_thumbnail_drink-more-water.jpg"
-    
-    // TODO: Update this. How many times do we want program to loop?
-    if (times > 3) {
-        return "hi"
-    }
-    
-    // TODO: Does this do anything?
-    // window.open(url, "_self", "popup")
     const windowFeatures = "left=100,top=100,width=320,height=320";
-    times++
     setTimeout(() => {
+        if (waterStop === true) {
+            return 'stop';
+        }
         const handle = window.open(
             url,
             "water",
             windowFeatures,
-          );
-        water(times, delay)
+        );
+        water(delay)
     }, delay)
 }
 
-// water(1, 4000)
+const waterText = document.createElement('div');
+waterText.innerHTML = "Water Reminder";
+document.querySelector("body").append(waterText)
+
+
+const waterOn = document.createElement('button')
+waterOn.setAttribute("type", "button")
+waterOn.textContent = "ON"
+document.querySelector("body").append(waterOn)
+waterOn.addEventListener('click', (e) => water(4000))
+
+
+const waterOff = document.createElement('button');
+waterOff.textContent = "OFF"
+waterOff.setAttribute("type", "button");
+document.querySelector("body").append(waterOff)
+waterOff.addEventListener('click', (e) => waterStopper())
+
+//--------------------------------------------------------------------------//
+
+
+let postureStop = false
+
+function postureStopper () {
+    postureStop = true
+}
+    function posture(delay) {
+    const url = "https://preview.redd.it/cbawmkzr9q731.jpg?width=640&crop=smart&auto=webp&s=77ea98a10b215df5ee15589bba353c4c482c42f4"
+    const windowFeatures = "left=100,top=100,width=320,height=320";
+    setTimeout(() => {
+        if (postureStop === true) {
+            return 'stop';
+        }
+        const handle = window.open(
+            url,
+            "posture",
+            windowFeatures,
+          );
+        posture(delay)
+    }, delay)
+}
+
+const postureText = document.createElement('div');
+postureText.innerHTML = "Posture Reminder";
+document.querySelector("body").append(postureText)
+
+
+const postureOn = document.createElement('button')
+postureOn.setAttribute("type", "button")
+postureOn.textContent = "ON"
+document.querySelector("body").append(postureOn)
+postureOn.addEventListener('click', (e) => posture(2000))
+
+const postureOff = document.createElement('button');
+postureOff.textContent = "OFF"
+postureOff.setAttribute("type", "button");
+document.querySelector("body").append(postureOff)
+postureOff.addEventListener('click', (e) => postureStopper())
+
+
+
+//--------------------------------------------------------------------------//
+
+
+let eyestrainStop = false
+
+function eyestrainStopper () {
+    eyestrainStop = true
+}
+    function posture(delay) {
+    const url = "https://preview.redd.it/cbawmkzr9q731.jpg?width=640&crop=smart&auto=webp&s=77ea98a10b215df5ee15589bba353c4c482c42f4"
+    const windowFeatures = "left=100,top=100,width=320,height=320";
+    setTimeout(() => {
+        if (postureStop === true) {
+            return 'stop';
+        }
+        const handle = window.open(
+            url,
+            "posture",
+            windowFeatures,
+          );
+        posture(delay)
+    }, delay)
+}
+
+const postureText = document.createElement('div');
+postureText.innerHTML = "Posture Reminder";
+document.querySelector("body").append(postureText)
+
+
+const postureOn = document.createElement('button')
+postureOn.setAttribute("type", "button")
+postureOn.textContent = "ON"
+document.querySelector("body").append(postureOn)
+postureOn.addEventListener('click', (e) => posture(2000))
+
+const postureOff = document.createElement('button');
+postureOff.textContent = "OFF"
+postureOff.setAttribute("type", "button");
+document.querySelector("body").append(postureOff)
+postureOff.addEventListener('click', (e) => postureStopper())
+
+
+
+
+
 
 // TODO LIST
 //trying to give alerts for each different reminder
@@ -66,21 +170,19 @@ function water(times, delay) {
     // document.querySelector("body").append(interface)
     
     // interface.innerHTML = "Set Water Reminder"
-    
 
-    const waterButton = document.createElement('button')
-    waterButton.setAttribute("onclick", water(1, 4000))
-    document.querySelector("body").append(waterButton)
+
+
     
     // document.getElementById
 
+    // water(1, 4000)
 
 
-
-    document.querySelector("waterFreq").append()
-    function waterData() {
-        let data = document.getElementById("water").value
-        console.log(data)
-    }
+    // document.querySelector("waterFreq").append()
+    // function waterData() {
+    //     let data = document.getElementById("water").value
+    //     console.log(data)
+    // }
     
     // waterData()
