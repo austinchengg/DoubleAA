@@ -1,3 +1,36 @@
 #waterFreq {
     border: 1px solid black;
 }
+
+body {
+    background: linear-gradient(rgb(187, 229, 207), rgb(58, 219, 152));
+    /* background-color: rgb(58, 219, 152); */
+    /* height: 10%; */
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    margin: 0;
+    /* background: linear-gradient(#e66465, #9198e5); */
+}
+
+button {
+    background-color: rgb(85, 186, 168);
+    border-radius: 10px;
+    margin: 2px;
+}
+
+.off {
+    background-color: rgb(234, 229, 233);
+    /* font-weight: bold; */
+}
+
+.zen {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}

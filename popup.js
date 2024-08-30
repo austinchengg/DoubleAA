@@ -23,12 +23,20 @@ function waterStopper () {
     waterStop = true
 }
 function water(delay) {
+    // let i = Math.floor(Math.random() * 3)
+    waterStop = false
     const url = "https://naluwellness.com/images/easyblog_articles/10/b2ap3_thumbnail_drink-more-water.jpg"
+    // const url2 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtHcYfhsA2FsUXInGWYzA8qQ6MhrRxuASfIEiaoi9HghcfdpbrICB5nsrNaP92XCzsdqQ&usqp=CAU"
+    // const url3 = 'https://play-lh.googleusercontent.com/5-n1OwqG0S6XoJu856wWv95Yl9yf_rUY6SiLvsTMK-jTWFH5HHl3spMRTN9L4OjKnw'
+    // const images = [url1, url2, url3]
     const windowFeatures = "left=100,top=100,width=320,height=320";
+    
     setTimeout(() => {
+        console.log(waterStop)
         if (waterStop === true) {
             return 'stop';
         }
+        
         const handle = window.open(
             url,
             "water",
@@ -39,6 +47,7 @@ function water(delay) {
 }
 
 const waterText = document.createElement('div');
+waterText.setAttribute("class", "zen")
 waterText.innerHTML = "Water Reminder";
 document.querySelector("body").append(waterText)
 
@@ -51,6 +60,7 @@ waterOn.addEventListener('click', (e) => water(4000))
 
 
 const waterOff = document.createElement('button');
+waterOff.setAttribute("class", "off")
 waterOff.textContent = "OFF"
 waterOff.setAttribute("type", "button");
 document.querySelector("body").append(waterOff)
@@ -65,8 +75,9 @@ function postureStopper () {
     postureStop = true
 }
     function posture(delay) {
-    const url = "https://preview.redd.it/cbawmkzr9q731.jpg?width=640&crop=smart&auto=webp&s=77ea98a10b215df5ee15589bba353c4c482c42f4"
-    const windowFeatures = "left=100,top=100,width=320,height=320";
+        postureStop = false
+        const url = "Mario.png"
+        const windowFeatures = "left=100,top=100,width=320,height=320";
     setTimeout(() => {
         if (postureStop === true) {
             return 'stop';
@@ -81,6 +92,7 @@ function postureStopper () {
 }
 
 const postureText = document.createElement('div');
+postureText.setAttribute("class", "zen")
 postureText.innerHTML = "Posture Reminder";
 document.querySelector("body").append(postureText)
 
@@ -89,9 +101,10 @@ const postureOn = document.createElement('button')
 postureOn.setAttribute("type", "button")
 postureOn.textContent = "ON"
 document.querySelector("body").append(postureOn)
-postureOn.addEventListener('click', (e) => posture(2000))
+postureOn.addEventListener('click', (e) => posture(6000))
 
 const postureOff = document.createElement('button');
+postureOff.setAttribute("class", "off")
 postureOff.textContent = "OFF"
 postureOff.setAttribute("type", "button");
 document.querySelector("body").append(postureOff)
@@ -107,38 +120,41 @@ let eyestrainStop = false
 function eyestrainStopper () {
     eyestrainStop = true
 }
-    function posture(delay) {
-    const url = "https://preview.redd.it/cbawmkzr9q731.jpg?width=640&crop=smart&auto=webp&s=77ea98a10b215df5ee15589bba353c4c482c42f4"
+    function eyestrain(delay) {
+        eyestrainStop = false;
+    const url = "https://images.ctfassets.net/u4vv676b8z52/38LJtKrZbwrI1l1ix1zsgs/fc5f81c77be02080d8bd20810e2c13ea/20-20-20-rule-660x500.gif"
     const windowFeatures = "left=100,top=100,width=320,height=320";
     setTimeout(() => {
-        if (postureStop === true) {
+        if (eyestrainStop === true) {
             return 'stop';
         }
         const handle = window.open(
             url,
-            "posture",
+            "eyestrain",
             windowFeatures,
           );
-        posture(delay)
+        eyestrain(delay)
     }, delay)
 }
 
-const postureText = document.createElement('div');
-postureText.innerHTML = "Posture Reminder";
-document.querySelector("body").append(postureText)
+const eyestrainText = document.createElement('div');
+eyestrainText.setAttribute("class", "zen")
+eyestrainText.innerHTML = "Eyestrain Reminder";
+document.querySelector("body").append(eyestrainText)
 
 
-const postureOn = document.createElement('button')
-postureOn.setAttribute("type", "button")
-postureOn.textContent = "ON"
-document.querySelector("body").append(postureOn)
-postureOn.addEventListener('click', (e) => posture(2000))
+const eyestrainOn = document.createElement('button')
+eyestrainOn.setAttribute("type", "button")
+eyestrainOn.textContent = "ON"
+document.querySelector("body").append(eyestrainOn)
+eyestrainOn.addEventListener('click', (e) => eyestrain(8000))
 
-const postureOff = document.createElement('button');
-postureOff.textContent = "OFF"
-postureOff.setAttribute("type", "button");
-document.querySelector("body").append(postureOff)
-postureOff.addEventListener('click', (e) => postureStopper())
+const eyestrainOff = document.createElement('button');
+eyestrainOff.setAttribute("class", "off")
+eyestrainOff.textContent = "OFF"
+eyestrainOff.setAttribute("type", "button");
+document.querySelector("body").append(eyestrainOff)
+eyestrainOff.addEventListener('click', (e) => eyestrainStopper())
 
 
 
